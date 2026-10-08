@@ -1,33 +1,33 @@
 categoria_gastos = ["comida", "transporte", "combustible", "varios", "salarios pagados"]
 categoria_ingresos = ["ventas", "donaciones", "servicios", "retiro de inversiones", "sueldo"]
 
-id_transacciones = 0
-transacciones = {id_transacciones :
+identificador = 0
+transacciones = [
     {
-        "tipo" : "tipo",
+        "id" : 0,
         "categoria" : "categoria",
+        "tipo" : "tipo",
         "monto" : 0,
         "descripcion" : "descripcion",
         "fecha" : "fecha"
     },
-}
+]
 
 
-def mostrar_gasto(id_gasto):
-    if id_gasto in transacciones:
-        gasto = transacciones[id_gasto]
-        print("----- Gasto encontrado ------")
-        print()
-        for clave, valor in gasto.items():
-            print(f"{clave}: {valor}")
-            print()
-            print("-"*30)
-    else:
-        print("Gasto no encontrado!")
-        print("Volviendo al menu anterior...")
-        print("="*30)
-
-
+def ver_gastos():
+    hay_gasto = False
+    eq = "="*30
+    for items in transacciones:
+        if items["tipo"] == "gasto":
+            if not hay_gasto:
+                print(f"----- Gasto encontrado -----\n")
+                hay_gasto = True
+            print(f"Identificador: {items['id']}\n"
+                f"Gasto: {items['categoria']}\n"
+                f"Monto y fecha: {items['monto']} {items['fecha']}\n"
+                f"Descripcion: {items['descripcion']}\n")
+    if not hay_gasto:
+        print("No hay gastos registrados.")
 
 def modificar_monto_gasto():
 

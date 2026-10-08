@@ -12,11 +12,10 @@ transacciones = [
         "fecha" : "fecha"
     },
 ]
-
+eq = "="*30
 
 def ver_gastos():
     hay_gasto = False
-    eq = "="*30
     for items in transacciones:
         if items["tipo"] == "gasto":
             if not hay_gasto:

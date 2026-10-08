@@ -1,5 +1,5 @@
-tipos_gastos = ["comida", "transporte", "combustible", "varios", "salarios pagados"]
-tipos_ingresos = ["ventas", "donaciones", "servicios", "retiro de inversiones", "sueldo"]
+categoria_gastos = ["comida", "transporte", "combustible", "varios", "salarios pagados"]
+categoria_ingresos = ["ventas", "donaciones", "servicios", "retiro de inversiones", "sueldo"]
 
 id_transacciones = 0
 transacciones = {id_transacciones :
@@ -13,11 +13,25 @@ transacciones = {id_transacciones :
 }
 
 
+def mostrar_gasto(id_gasto):
+    if id_gasto in transacciones:
+        gasto = transacciones[id_gasto]
+        print("----- Gasto encontrado ------")
+        print()
+        for clave, valor in gasto.items():
+            print(f"{clave}: {valor}")
+            print()
+            print("-"*30)
+    else:
+        print("Gasto no encontrado!")
+        print("Volviendo al menu anterior...")
+        print("="*30)
 
 
-def modificar_monto_gasto(tipo, monto):
 
-    gasto = gastos["tipo"]
+def modificar_monto_gasto():
+
+    gasto = transacciones["tipo"]
     gasto["monto"] = monto
     print("Actualizacion de monto final:")
     print("="*20)
@@ -39,19 +53,7 @@ def agregar_gastos(categoria, monto, fecha):
         id_nueva = max_id + 1
     return mostrar_gasto(id_gasto)
 
-def mostrar_gasto(id_gasto):
-    if id_gasto in transacciones:
-        gasto = transacciones[id_gasto]
-        print("----- Gasto encontrado ------")
-        print()
-        for clave, valor in gasto.items():
-            print(f"{clave}: {valor}")
-            print()
-            print("-"*30)
-    else:
-        print("Gasto no encontrado!")
-        print("Volviendo al menu anterior...")
-        print("="*30)
+
 
 
 

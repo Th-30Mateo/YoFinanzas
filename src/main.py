@@ -16,56 +16,34 @@ eq = "="*30
 
 def ver_gastos():
     hay_gasto = False
-    for items in transacciones:
-        if items["tipo"] == "gasto":
+    for item in transacciones:
+        if item["tipo"] == "gasto":
             if not hay_gasto:
-                print(f"----- Gasto encontrado -----\n")
+                print(f"\n----- Gasto encontrado -----\n"
+                      f"{eq}")
                 hay_gasto = True
-            print(f"Identificador: {items['id']}\n"
-                f"Gasto: {items['categoria']}\n"
-                f"Monto y fecha: {items['monto']} {items['fecha']}\n"
-                f"Descripcion: {items['descripcion']}\n")
+            print(f"Identificador: {item['id']}\n"
+                f"Gasto: {item['categoria']}\n"
+                f"Monto y fecha: {item['monto']} {item['fecha']}\n"
+                f"Descripcion: {item['descripcion']}\n"
+                f"{eq}\n")
     if not hay_gasto:
-        print("No hay gastos registrados.")
+        print("No hay gastos registrados.\n")
+    input("\nPresione ENTER para volver al menu principal...")
 
-def modificar_monto_gasto():
-
-    gasto = transacciones["tipo"]
-    gasto["monto"] = monto
-    print("Actualizacion de monto final:")
-    print("="*20)
-    print(f"Monto de {gasto["categoria"]} modificado = {gasto["monto"]}")
-    print("-"*30)
-
-def agregar_gastos(categoria, monto, fecha):
-    gasto = {
-    "tipo" : "gasto",
-    "categoria" : categoria, 
-    "monto" : monto,
-    "fecha" : fecha
-    }
-    if len(transacciones) == 0:
-        id_nueva = 1
-
-    else:
-        max_id = max(transacciones.keys())
-        id_nueva = max_id + 1
-    return mostrar_gasto(id_gasto)
-
-
-
-
-
-
-def mostrar_gastos():
-    hay_gastos = False
-    for id_dic, datos in transacciones.items():
-        if datos["tipo"] == "gasto":
-            hay_gastos = True
-            print(f"ID de la transaccion: {id_dic}")
-            for clave, valor in datos.items():
-                print(clave, valor)
-                print("-"*20)
-
-    if not hay_gastos:
-        print("Aun no ha registrado gastos!!")
+def ver_ingresos():
+    hay_ingreso = False
+    for item in transacciones:
+        if item["tipo"] == "ingreso":
+            if not hay_ingreso:
+                print("\n----- Ingresos encontrados -----\n"
+                      f"{eq}")
+                hay_ingreso = True
+            print(f"Identificador: {item['id']}\n"
+                  f"Ingreso: {item['categoria']}\n"
+                  f"Monto y fecha: {item['monto']} {item['fecha']}\n"
+                  f"Descripcion: {item['descripcion']}\n"
+                  f"{eq}\n")
+    if not hay_ingreso:
+        print("No hay ingresos registrados\n")
+    input("\nPresione ENTER para volver al menu principal...")

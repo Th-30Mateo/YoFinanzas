@@ -20,17 +20,6 @@ El código se organiza dentro del directorio `src/`, donde se encuentran módulo
 
 La implementación actual incluye estructuras para clasificar ingresos y gastos, junto con funciones destinadas a consultar estas categorías.
 
-## Instalación y ejecución
-
-Cloná el repositorio:
-
-```bash
-git clone https://github.com/Th-30Mateo/YoFinanzas.git
-cd YoFinanzas
-```
-
-Revisá los archivos dentro de `src/` antes de ejecutar la aplicación. El proyecto todavía requiere integración y pruebas para confirmar que el menú y las funciones estén conectados correctamente.
-
 ## Estado del proyecto
 
 **En desarrollo.** La aplicación todavía no debe considerarse una solución completa de gestión financiera.
@@ -43,11 +32,6 @@ Entre los aspectos pendientes se encuentran:
 - Definir cómo se almacenarán los movimientos y si se conservarán entre ejecuciones.
 - Incorporar pruebas para verificar el comportamiento de las funcionalidades.
 
-## Limitaciones actuales
-
-- No se ha verificado que todos los flujos de la aplicación funcionen de extremo a extremo.
-- No se ha confirmado almacenamiento persistente de las transacciones.
-- No debe utilizarse como sistema financiero de confianza.
 
 ## Objetivo de aprendizaje
 
